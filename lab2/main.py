@@ -1,4 +1,4 @@
-from platform import Platform
+from plat import Platform
 from genre import Genre
 from publisher import Publisher
 import game as Game
@@ -13,21 +13,21 @@ def main():
 
 
     digital_game = Game.DigitalGame(1, "Cyber Adventure", genre_action, platform_pc, "2023-05-20", 59.99, publisher_ubisoft, 301, 70)
-    physical_game = Game.PhysicalGame(2, "Fantasy World", genre_rpg, platform_ps5, "2022-11-15", 79.99, publisher_ea, 302, 0.1, "70 на 40 см")
+    physical_game = Game.PhysicalGame(2, "Fantasy World", genre_rpg, platform_ps5, "2022-11-15", 79.99, publisher_ea, 302, 0.1, "70/40")
 
-    print("Інформація про цифрову гру:")
+    print("Digital Game Information:")
     digital_game.display_info()
 
-    print("\nІнформація про фізичну гру:")
+    print("\nPhysical Game Information:")
     physical_game.display_info()
 
     digital_game.update_price(1000)
 
-    print(f"Нова ціна на цифрову гру = {digital_game.primary_price}")
-  
-    convert_price = digital_game.convert_price(digital_game.primary_price, 42)
+    print(f"New price for digital game = {digital_game.primary_price}")
 
-    print(f"Конвертація ціни в гривні {convert_price}")
+    convert_price = Game.Game.convert_price(digital_game.primary_price, 42)
+
+    print(f"Price conversion in hryvnias {convert_price}")
 
 if __name__ == "__main__":
     main()
